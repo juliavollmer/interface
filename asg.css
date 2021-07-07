@@ -75,6 +75,7 @@ cursor: pointer; }
     left: 0;
     top: 0;
     /* height: 82px; */
+    min-height: 2rem;
     width: 100vw;
     background-color: #e8eaed;
     text-align: justify;
