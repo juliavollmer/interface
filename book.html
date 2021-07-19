@@ -18,11 +18,30 @@
   <script src="../dist/epub.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
+<style>
+    #book {
+        margin-top: 5px;
+        margin-left: 5px;
+    }
+    #line {
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0);
+        box-shadow: 1px 1px 1px black;
+        height: 100vh;
+        width: 1vw;
+        left: 50%;
+        top: 0;
+        margin-left: -0.5vw;
+        }
+</style>
+<body style="margin:0px;padding:0px;overflow:hidden">
+    <div id="line"></div>
+    <iframe id="book" src="https://indd.adobe.com/embed/566dd12a-5fd7-473d-9cfd-4f2a90054966?startpage=1&allowFullscreen=true" frameborder="0" style="overflow:hidden;height:100%;width:100%" height="100%" width="100%"></iframe>
+</body>
 <script>
-    var book = ePub("test.epub");
-    var rendition = book.renderTo("area", {width: 600, height: 400});
-    var displayed = rendition.display();
-  </script>
-<body><div id="area"></div></body>
-
+    var wi = $( window ).width();
+    var he = $( window ).height();
+    $("#book").css("width", wi-10);
+    $("#book").css("height", he-10);
+</script>
 </html>
